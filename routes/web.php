@@ -25,4 +25,13 @@ $router->group([
     $router->post('me', 'AuthController@me');
 
 });
+
+$router->group([
+    'prefix' => 'checklists'
+], function ($router) {
+
+    $router->post('templates', 'TemplateController@store');
+
+});
+
 $router->get('/users', 'UserController@index');
